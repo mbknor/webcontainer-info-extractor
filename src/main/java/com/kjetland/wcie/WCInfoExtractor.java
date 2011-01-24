@@ -28,7 +28,7 @@ import java.lang.reflect.Method;
  */
 public class WCInfoExtractor {
 
-    static WCInfo extractWCInfo( Object servletContext){
+    public static WCInfo extractWCInfo( Object servletContext){
 		String contextPath = null;
 		Integer port = null;
         WCInfo.WebContainer wc = null;
@@ -79,7 +79,7 @@ public class WCInfoExtractor {
 		}
 
 
-		//remove leading /
+		//make sure we start with /
 		if( !contextPath.startsWith("/")){
 			contextPath = "/"+contextPath;
 		}
